@@ -29,4 +29,5 @@ switch_states.json
 /models
 install.bat
 tools/ffmpeg/
+
 python-3.11.9-amd64.exe
