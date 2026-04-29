@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import sys
 
 # Add the project root to PATH so bundled ffmpeg/ffprobe are found
 project_root = os.path.dirname(os.path.abspath(__file__))
@@ -15,15 +14,8 @@ if os.path.isdir(nvidia_dir):
         if os.path.isdir(bin_dir):
             os.environ["PATH"] = bin_dir + os.pathsep + os.environ["PATH"]
 
-# Set headless environment for GUI libraries
-os.environ['QT_QPA_PLATFORM'] = 'offscreen'
-os.environ['DISPLAY'] = ''
-
-# Import the tkinter fix to patch the ScreenChanged error
-import tkinter_fix
-
 import modules.globals
-modules.globals.headless = True
+import tkinter_fix
 
 from modules import core
 
